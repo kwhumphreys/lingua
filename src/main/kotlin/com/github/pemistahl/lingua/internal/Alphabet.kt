@@ -36,6 +36,7 @@ internal enum class Alphabet {
     HIRAGANA,
     KATAKANA,
     LATIN,
+    SINHALA,
     TAMIL,
     TELUGU,
     THAI,
