@@ -43,6 +43,7 @@ val linguaSupportedLanguages: String by project
 val linguaMainClass: String by project
 val linguaCsvHeader: String by project
 val githubPackagesUrl: String by project
+val githubPackagesUsername: String by project
 
 val compileTestKotlin: KotlinCompile by tasks
 
@@ -417,8 +418,8 @@ publishing {
             name = "GitHubPackages"
             url = uri(githubPackagesUrl)
             credentials {
-                username = linguaDeveloperId
-                password = project.findProperty("ghPackagesToken") as String?
+                username = githubPackagesUsername
+                password = project.findProperty("ghPackagesToken") as String? ?: System.getenv("GITHUB_TOKEN")
             }
         }
     }
